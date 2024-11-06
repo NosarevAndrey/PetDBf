@@ -188,8 +188,8 @@ namespace PetDBf.Forms
                 {
                     if (row.Cells["Id"].Value != null && (int)row.Cells["Id"].Value == selectedClientId.Value)
                     {
-                        dataGridViewClients.CurrentCell = row.Cells[1]; // Select the cell in the second column
-                        break; // Exit the loop once the matching row is found
+                        dataGridViewClients.CurrentCell = row.Cells[1]; 
+                        break; 
                     }
                 }
             }

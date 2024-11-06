@@ -240,7 +240,14 @@ namespace PetDBf.Forms
 
             if (selectedPetId.HasValue)
             {
-                dataGridViewPets.CurrentCell = dataGridViewPets.Rows[selectedPetId.Value + 1].Cells[1];
+                foreach (DataGridViewRow row in dataGridViewPets.Rows)
+                {
+                    if (row.Cells["Id"].Value != null && (int)row.Cells["Id"].Value == selectedPetId.Value)
+                    {
+                        dataGridViewPets.CurrentCell = row.Cells[1];
+                        break;
+                    }
+                }
             }
         }
 
